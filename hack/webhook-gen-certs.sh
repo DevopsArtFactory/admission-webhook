@@ -10,8 +10,9 @@ openssl req -newkey rsa:2048 -nodes -keyout server.key \
   -subj "/C=AU/CN=custom-admission-webhook" \
   -out server.csr
 
+echo "subjectAltName=DNS:custom-admission-webhook.kube-system.svc" > san.txt
 openssl x509 -req \
-  -extfile <(printf "subjectAltName=DNS:custom-admission-webhook.kube-system.svc") \
+  -extfile san.txt \
   -days 365 \
   -in server.csr \
   -CA ca.crt -CAkey ca.key -CAcreateserial \

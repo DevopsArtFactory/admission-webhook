@@ -16,8 +16,8 @@ spec:
         app: custom-admission-webhook
     spec:
       containers:
-        - image: custom-admission-webhook:latest
-          imagePullPolicy: Never
+        - image: custom-admission-webhook:0.0.1
+          imagePullPolicy: Always
           name: custom-admission-webhook
           env:
             - name: TLS

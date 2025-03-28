@@ -1,6 +1,6 @@
 module github.com/YoungJinJung/custom-admission-webhook
 
-go 1.19
+go 1.23
 
 require (
 	github.com/sirupsen/logrus v1.9.0
